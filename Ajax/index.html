@@ -1,0 +1,38 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+<h3>Получение квадратного числа:</h3>
+
+<form action="">
+Введите значение: <input type="text" id="txt1" onkeyup="number(this.value)">
+</form>
+
+<p>Результат: <span id="result"></span></p>
+
+<script>
+function number(sqr) { 
+    if (sqr.length == 0) { 
+        document.getElementById("result").innerHTML = "";
+        return;
+    }
+  else {var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       document.getElementById("result").innerHTML =
+       this.responseText; 
+       }  
+  };
+  xhttp.open("GET", "result.php?o=" + sqr, true);
+  xhttp.send();
+  }
+}
+</script>
+
+</body>
+</html>
+ 
